@@ -2,6 +2,10 @@ from django.db import models
 from django.core import validators
 
 
+class PostManager(models.Manager):
+    def latest_posts(self):
+        return self.order_by('-date')[:3]
+
 # Create your models here.
 class Author(models.Model):
     first_name = models.CharField(max_length=100)
@@ -33,6 +37,8 @@ class Post(models.Model):
         ],
     )
     tags = models.ManyToManyField(Tag, related_name="posts", blank=True)
+
+    objects = PostManager()
 
     def __str__(self):
         return self.title
