@@ -2,8 +2,8 @@
 
 <li>
   <article class="post">
-    <a href="{% url 'blog:detail' post.slug %}">
-      <img src="{% static 'blog/posts_covers/'|add:post.cover_image %}" alt="{{ post.title }}" />
+    <a href="{{post.get_absolute_url}}">
+      <img src="{{post.get_cover_image_url}}" alt="{{ post.title }}" />
       <div class="post__content">
         <h3>{{ post.title }}</h3>
         <p>{{ post.excerpt }}</p>
