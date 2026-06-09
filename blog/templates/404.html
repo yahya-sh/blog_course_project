@@ -4,6 +4,11 @@
 {% block css_files %}
   {{ block.super }}
   <link rel="stylesheet" href="{% static 'blog/css/welcome.css' %}" />
+  <style>
+    #main-navigation {
+      background: #4c03ac;
+    }
+  </style>
 {% endblock %}
 
 {% block title %}
