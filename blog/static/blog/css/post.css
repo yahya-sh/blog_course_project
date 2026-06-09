@@ -20,10 +20,10 @@
 }
 
 .post img {
-  width: 5rem;
-  height: 5rem;
+  width: 14rem;
+  height: 8rem;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 16px;
 }
 
 .post h3 {
