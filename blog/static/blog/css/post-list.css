@@ -3,7 +3,7 @@ body {
 }
 
 #main-navigation {
-  background-color: #390281;
+  background-color: #4c03ac;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -29,10 +29,6 @@ ul {
   gap: 1.5rem;
 }
 
-.post img {
-  width: 7rem;
-  height: 7rem;
-}
 
 .post a {
   height: 22rem;
