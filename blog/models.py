@@ -21,6 +21,7 @@ class Tag(models.Model):
     def __str__(self):
         return self.caption
 class Post(models.Model):
+    author = models.ForeignKey(Author, null=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=150)
     excerpt = models.CharField(max_length=255)
     cover_image = models.CharField(max_length=150)
