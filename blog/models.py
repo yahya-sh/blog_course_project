@@ -15,6 +15,11 @@ class Author(models.Model):
         return self.get_full_name()
 
 
+class Tag(models.Model):
+    caption = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.caption
 class Post(models.Model):
     title = models.CharField(max_length=150)
     excerpt = models.CharField(max_length=255)
@@ -26,14 +31,9 @@ class Post(models.Model):
             validators.MinLengthValidator(20),
         ],
     )
+    tags = models.ManyToManyField(Tag, related_name="posts", blank=True)
 
     def __str__(self):
         return self.title
 
 
-class Tag(models.Model):
-    caption = models.CharField(max_length=50, unique=True)
-    posts = models.ManyToManyField(Post, related_name="tags")
-
-    def __str__(self):
-        return self.caption
