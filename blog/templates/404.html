@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'blog/css/post.css' %}" />
+  <link rel="stylesheet" href="{% static 'blog/css/welcome.css' %}" />
+{% endblock %}
+
+{% block title %}
+  We didn't find that page!
+{% endblock %}
+
+{% block content %}
+  <div style="height: calc(100vh - 4rem);">
+    <div style="height: 4rem;"></div>
+
+    <div style="width=100%; height:calc(100% - 4rem); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <h2 style="font-size: 4rem;">We're sorry!</h2>
+      <p style="font-size: 1.5rem;">But we couldn't find that page!</p>
+    </div>
+  </div>
+{% endblock %}

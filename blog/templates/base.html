@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+        Blog App
+      {% endblock %}
+    </title>
+    {% block css_files %}
+        <link rel="stylesheet" href="{% static 'blog/css/styles.css' %}" />
+    {% endblock  %}
+  </head>
+  <body>
+    <header>
+      <nav id="main-navigation">
+        <div class="logo">
+          <a href="/">My Blog</a>
+        </div>
+
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/posts/">Posts</a>
+          </li>
+          <li>
+            <a href="/authors/">Authors</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; {{ now|date:"Y" }} Blog App. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
