@@ -24,6 +24,6 @@ urlpatterns = [
     path('', include('blog.urls')),
 ]
 if settings.DEBUG:
-    urlpatterns+=[
+    urlpatterns=[
         path('404/', lambda request: render(request, '404.html')),
-    ]
+    ]+urlpatterns
