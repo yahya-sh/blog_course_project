@@ -14,7 +14,7 @@
   <section id="summary">
     <h2>{{ post.title }}</h2>
     <article>
-      <img src="{% static 'blog/posts_covers/'|add:post.cover_image %}" alt="{{ post.title }}" />
+      <img src="{{post.get_cover_image_url}}" alt="{{ post.title }}" />
       <address>By {{ post.author }}</address>
       <div>
         Last updated on <time>{{ post.date|date:'d M Y' }}</time>
