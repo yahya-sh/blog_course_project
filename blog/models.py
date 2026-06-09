@@ -8,6 +8,12 @@ class Author(models.Model):
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
 
+    def get_full_name(self):
+        return f"{self.first_name} {self.last_name}"
+
+    def __str__(self):
+        return self.get_full_name()
+
 
 class Post(models.Model):
     title = models.CharField(max_length=150)
@@ -21,7 +27,13 @@ class Post(models.Model):
         ],
     )
 
+    def __str__(self):
+        return self.title
+
 
 class Tag(models.Model):
     caption = models.CharField(max_length=50, unique=True)
     posts = models.ManyToManyField(Post, related_name="tags")
+
+    def __str__(self):
+        return self.caption
